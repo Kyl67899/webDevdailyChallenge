@@ -4,141 +4,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Weather App UI">
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <title>Kyle Parsotan | Weather App UI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <article class="profile">
-        <div class="card">
-            <div class="box_1">
-                <div class="title">
-                    Montreal
-                </div>
-                <div class="temp_1">
-                    19°C
-                </div>
-                <div class="condition">
-                    Mostly Clear
-                </div>
-                <div class="temp_box">
-                    <h5 class="high">
-                        <span class="high_1">H: 24°C
-                    </h5>
-                    <h5 class="low">
-                        <span class="low_1">L: 18°C
-                    </h5>
+    <div class="weather-container">
+        <!-- Stars background -->
+        <div class="stars">
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+            <div class="star star-8"></div>
+            <div class="star star-9"></div>
+            <div class="star star-10"></div>
+        </div>
+
+        <div class="weather-content">
+            <!-- Header -->
+            <div class="location">Montreal</div>
+            <div class="temperature">19°</div>
+            <div class="condition">Mostly Clear</div>
+            <div class="high-low">
+                <span class="me-3">H:24°</span>
+                <span>L:18°</span>
+            </div>
+
+            <!-- House illustration -->
+            <div class="house-illustration">
+                <div class="house-placeholder"></div>
+            </div>
+
+            <!-- Forecast tabs -->
+            <div class="forecast-tabs">
+                <div class="tab-container">
+                    <button class="tab-btn active" onclick="switchTab('hourly', this)">Hourly Forecast</button>
+                    <button class="tab-btn" onclick="switchTab('weekly', this)">Weekly Forecast</button>
                 </div>
             </div>
-            <div class="box_2">
-                <div class="line"></div>
-                <div class="w3-bar w3-black">
-                    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Hourly Forecast')">
-                        Hourly Forecast
-                    </button>
-                    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Weekly Forecast')">
-                        Weekly Forecast
-                    </button>
-                </div>
-                <div id="Hourly Forecast" class="w3-container w3-border city">
-                    <div class="container my-2">
-                        <div class="weather-container">
-                            <div class="hourly-forecast">
-                                <div class="forecast-item">
-                                    <p class="">12 AM</p>
-                                    <i class="fas fa-cloud-rain weather-icon"></i>
-                                    <p class="temp">40%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>NOW</p>
-                                    <i class="fas fa-cloud-rain weather-icon"></i>
-                                    <p class="temp">30%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>2 AM</p>
-                                    <i class="fa-solid fa-cloud"></i>
-                                    <p class="temp">10%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>3 AM</p>
-                                    <i class="fa-solid fa-cloud"></i>
-                                    <p class="temp">10%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>4 AM</p>
-                                    <i class="fas fa-cloud-rain weather-icon"></i>
-                                    <p class="temp">50%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                            </div>
+
+            <!-- Forecast container -->
+            <div class="forecast-container">
+                <!-- Hourly forecast -->
+                <div id="hourly-forecast" class="forecast-content">
+                    <div class="hourly-forecast">
+                        <div class="hourly-item">
+                            <div class="hourly-time">12 AM</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud-rain"></i></div>
+                            <div class="hourly-temp">19°</div>
+                        </div>
+                        <div class="hourly-item active">
+                            <div class="hourly-time">NOW</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud-rain"></i></div>
+                            <div class="hourly-temp">19°</div>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="hourly-time">2 AM</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud"></i></div>
+                            <div class="hourly-temp">19°</div>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="hourly-time">3 AM</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud-rain"></i></div>
+                            <div class="hourly-temp">19°</div>
+                        </div>
+                        <div class="hourly-item">
+                            <div class="hourly-time">4 AM</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud-rain"></i></div>
+                            <div class="hourly-temp">19°</div>
                         </div>
                     </div>
                 </div>
 
-                <div id="Weekly Forecast" class="w3-container w3-border city" style="display:none">
-                    <div class="container my-2">
-                        <div class="weather-container">
-                            <div class="hourly-forecast">
-                                <div class="forecast-item">
-                                    <p class="">Saturday</p>
-                                    <i class="fas fa-cloud-rain weather-icon"></i>
-                                    <p class="temp">30%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>Sunday</p>
-                                    <i class="fas fa-cloud-rain weather-icon"></i>
-                                    <p class="temp">30%</p>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>Monday</p>
-                                    <i class="fa-solid fa-cloud"></i>
-                                    <p class="temp">19°C</p>
-                                </div>
-                                <div class="forecast-item">
-                                    <p>Tuesday</p>
-                                    <i class="fa-solid fa-sun-cloud"></i>
-                                    <p class="temp">19°C</p>
-                                </div>
-                            </div>
+                <!-- Weekly forecast -->
+                <div id="weekly-forecast" class="forecast-content weekly-forecast">
+                    <div class="weekly-item">
+                        <div class="weekly-left">
+                            <div class="weekly-day">Today</div>
+                            <div class="weekly-icon"><i class="fas fa-cloud-rain"></i></div>
+                        </div>
+                        <div class="weekly-temps">
+                            <div class="weekly-high">24°</div>
+                            <div class="weekly-low">18°</div>
+                        </div>
+                    </div>
+                    <div class="weekly-item">
+                        <div class="weekly-left">
+                            <div class="weekly-day">Tue</div>
+                            <div class="weekly-icon"><i class="fas fa-sun"></i></div>
+                        </div>
+                        <div class="weekly-temps">
+                            <div class="weekly-high">26°</div>
+                            <div class="weekly-low">20°</div>
+                        </div>
+                    </div>
+                    <div class="weekly-item">
+                        <div class="weekly-left">
+                            <div class="weekly-day">Wed</div>
+                            <div class="weekly-icon"><i class="fas fa-cloud"></i></div>
+                        </div>
+                        <div class="weekly-temps">
+                            <div class="weekly-high">22°</div>
+                            <div class="weekly-low">16°</div>
+                        </div>
+                    </div>
+                    <div class="weekly-item">
+                        <div class="weekly-left">
+                            <div class="weekly-day">Thu</div>
+                            <div class="weekly-icon"><i class="fas fa-snowflake"></i></div>
+                        </div>
+                        <div class="weekly-temps">
+                            <div class="weekly-high">18°</div>
+                            <div class="weekly-low">12°</div>
+                        </div>
+                    </div>
+                    <div class="weekly-item">
+                        <div class="weekly-left">
+                            <div class="weekly-day">Fri</div>
+                            <div class="weekly-icon"><i class="fas fa-bolt"></i></div>
+                        </div>
+                        <div class="weekly-temps">
+                            <div class="weekly-high">21°</div>
+                            <div class="weekly-low">15°</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </article>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        function openCity(evt, cityName) {
-            var i, x, tablinks;
-            x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < x.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-            }
-            document.getElementById(cityName).style.display = "flex";
-            evt.currentTarget.className += " w3-red";
-        }
-    </script>
+        let isTransitioning = false;
 
-    <!-- <footer class="footer">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
-            href="https://kyleparsotan.co">Kyle Parsotan</a>.
-    </footer> -->
+        function switchTab(tabType, buttonElement) {
+            if (isTransitioning) return;
+
+            const currentActive = document.querySelector('.tab-btn.active');
+            if (currentActive === buttonElement) return;
+
+            isTransitioning = true;
+
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+
+            // Get forecast elements
+            const hourlyForecast = document.getElementById('hourly-forecast');
+            const weeklyForecast = document.getElementById('weekly-forecast');
+            const currentForecast = tabType === 'hourly' ? weeklyForecast : hourlyForecast;
+            const newForecast = tabType === 'hourly' ? hourlyForecast : weeklyForecast;
+
+            // Start exit animation
+            currentForecast.classList.add('transitioning');
+
+            setTimeout(() => {
+                // Hide current and show new
+                currentForecast.style.display = 'none';
+                currentForecast.classList.remove('transitioning');
+
+                if (tabType === 'hourly') {
+                    weeklyForecast.classList.remove('active');
+                    hourlyForecast.style.display = 'block';
+                } else {
+                    hourlyForecast.style.display = 'none';
+                    weeklyForecast.style.display = 'block';
+                    weeklyForecast.classList.add('active');
+                }
+
+                // Reset animations for staggered effect
+                const items = newForecast.querySelectorAll('.hourly-item, .weekly-item');
+                items.forEach((item, index) => {
+                    item.style.animation = 'none';
+                    item.offsetHeight; // Trigger reflow
+
+                    if (tabType === 'hourly') {
+                        item.style.animation = `slideInUp 0.3s ease forwards`;
+                        item.style.animationDelay = `${index * 100}ms`;
+                    } else {
+                        item.style.animation = `slideInLeft 0.3s ease forwards`;
+                        item.style.animationDelay = `${index * 80}ms`;
+                    }
+                });
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 100);
+            }, 200);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Trigger initial animations
+            const hourlyItems = document.querySelectorAll('.hourly-item');
+            hourlyItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
 </body>
 
 </html>
