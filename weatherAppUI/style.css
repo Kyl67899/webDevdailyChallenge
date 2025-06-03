@@ -172,14 +172,6 @@ body {
   justify-content: center;
 }
 
-.house-placeholder {
-  width: 12rem;
-  height: 8rem;
-  background: url("/placeholder.svg?height=128&width=192") center/contain
-    no-repeat;
-  opacity: 0.9;
-}
-
 .forecast-tabs {
   display: flex;
   justify-content: center;
