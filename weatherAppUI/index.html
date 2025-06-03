@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Weather App UI">
+    <link rel="stylesheet" href="style.css">
+    <title>Kyle Parsotan | Weather App UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <article class="profile">
+        <div class="card">
+            <div class="box_1">
+                <div class="title">
+                    Montreal
+                </div>
+                <div class="temp_1">
+                    19°C
+                </div>
+                <div class="condition">
+                    Mostly Clear
+                </div>
+                <div class="temp_box">
+                    <h5 class="high">
+                        <span class="high_1">H: 24°C
+                    </h5>
+                    <h5 class="low">
+                        <span class="low_1">L: 18°C
+                    </h5>
+                </div>
+            </div>
+            <div class="box_2">
+                <div class="line"></div>
+                <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Hourly Forecast')">
+                        Hourly Forecast
+                    </button>
+                    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Weekly Forecast')">
+                        Weekly Forecast
+                    </button>
+                </div>
+                <div id="Hourly Forecast" class="w3-container w3-border city">
+                    <div class="container my-2">
+                        <div class="weather-container">
+                            <div class="hourly-forecast">
+                                <div class="forecast-item">
+                                    <p class="">12 AM</p>
+                                    <i class="fas fa-cloud-rain weather-icon"></i>
+                                    <p class="temp">40%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>NOW</p>
+                                    <i class="fas fa-cloud-rain weather-icon"></i>
+                                    <p class="temp">30%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>2 AM</p>
+                                    <i class="fa-solid fa-cloud"></i>
+                                    <p class="temp">10%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>3 AM</p>
+                                    <i class="fa-solid fa-cloud"></i>
+                                    <p class="temp">10%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>4 AM</p>
+                                    <i class="fas fa-cloud-rain weather-icon"></i>
+                                    <p class="temp">50%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Weekly Forecast" class="w3-container w3-border city" style="display:none">
+                    <div class="container my-2">
+                        <div class="weather-container">
+                            <div class="hourly-forecast">
+                                <div class="forecast-item">
+                                    <p class="">Saturday</p>
+                                    <i class="fas fa-cloud-rain weather-icon"></i>
+                                    <p class="temp">30%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>Sunday</p>
+                                    <i class="fas fa-cloud-rain weather-icon"></i>
+                                    <p class="temp">30%</p>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>Monday</p>
+                                    <i class="fa-solid fa-cloud"></i>
+                                    <p class="temp">19°C</p>
+                                </div>
+                                <div class="forecast-item">
+                                    <p>Tuesday</p>
+                                    <i class="fa-solid fa-sun-cloud"></i>
+                                    <p class="temp">19°C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "flex";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
+
+    <!-- <footer class="footer">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+            href="https://kyleparsotan.co">Kyle Parsotan</a>.
+    </footer> -->
+</body>
+
+</html>
