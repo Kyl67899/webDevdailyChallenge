@@ -29,7 +29,6 @@ body {
   overflow: hidden;
   max-width: 400px;
   width: 100%;
-  height: 700px;
   margin: 1rem;
 }
 
@@ -176,7 +175,6 @@ body {
 .forecast-tabs {
   display: flex;
   justify-content: center;
-  margin-top: 7.5rem;
   margin-bottom: 1.5rem;
 }
 
