@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from 'next/font/google'
 import "./globals.css"
 import { ThemeProvider } from "next-themes"
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from "@vercel/analytics/next"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Social Activity - Stay Connected",
@@ -84,7 +81,7 @@ export default function RootLayout({
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        
+
         {/* PWA meta tags */}
         <meta name="application-name" content="Social Activity" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -94,11 +91,14 @@ export default function RootLayout({
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content="#2563eb" />
         <meta name="msapplication-tap-highlight" content="no" />
-        
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
         {/* Prevent zoom on iOS */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body>
         <Analytics />
         <ThemeProvider
           attribute="class"
@@ -115,12 +115,12 @@ export default function RootLayout({
             >
               Skip to main content
             </a>
-            
+
             {/* Main Content */}
             <main id="main-content" className="relative">
               {children}
             </main>
-            
+
             {/* Toast Notifications */}
             <Toaster />
           </div>
