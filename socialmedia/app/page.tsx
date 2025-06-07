@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef, useCallback } from "react"
 import { motion, AnimatePresence, useMotionValue } from "framer-motion"
 import { Settings, Heart, MessageCircle, Clock, RefreshCw, ChevronDown, Check } from "lucide-react"
@@ -299,11 +298,10 @@ export default function ActivityApp() {
             <motion.button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedFilter === filter
-                  ? "bg-red-500 text-white shadow-lg"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedFilter === filter
+                ? "bg-red-500 text-white shadow-lg"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -520,9 +518,8 @@ function ActivityCard({
 
       {/* Activity Card */}
       <div
-        className={`flex items-center gap-4 p-3 rounded-xl transition-all cursor-pointer group relative z-10 select-none ${
-          activity.isNew ? "bg-blue-50/90 hover:bg-blue-100/90 border border-blue-200/50" : "bg-white hover:bg-gray-50"
-        }`}
+        className={`flex items-center gap-4 p-3 rounded-xl transition-all cursor-pointer group relative z-10 select-none ${activity.isNew ? "bg-blue-50/90 hover:bg-blue-100/90 border border-blue-200/50" : "bg-white hover:bg-gray-50"
+          }`}
         style={{
           transform: `translateX(${swipeX}px)`,
           transition: isDragging ? "none" : "transform 0.3s ease-out",
