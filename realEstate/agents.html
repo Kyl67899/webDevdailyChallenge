@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Agents - Nestico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-home text-primary me-2"></i>Nestico
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buy.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rent.html">Rent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="agents.html">Find Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our Company</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="contact.html" class="btn btn-outline-primary me-2">Contact Us</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">Meet Our Agents</h1>
+                    <p class="lead">Expert professionals ready to help you find your dream home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="agents-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Our Expert Team</h2>
+                    <p class="text-muted">Connect with experienced real estate professionals who know the market inside and out</p>
+                </div>
+            </div>
+            
+            <div class="row" id="agentsGrid">
+                <!-- Agents will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Agents -->
+    <section class="why-agents-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="mb-3">Why Choose Our Agents?</h2>
+                    <p class="text-muted">Our agents are committed to providing exceptional service</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 class="mb-3">Certified Professionals</h5>
+                        <p class="text-muted">All our agents are licensed and certified with years of experience in the real estate market.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h5 class="mb-3">Local Market Experts</h5>
+                        <p class="text-muted">Deep knowledge of local neighborhoods, pricing trends, and market conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5 class="mb-3">Personalized Service</h5>
+                        <p class="text-muted">Dedicated support throughout your entire buying, selling, or renting journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-home text-primary me-2"></i>Nestico
+                    </h5>
+                    <p class="text-muted">Making home buying effortless with verified listings, virtual tours, and transparent pricing.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                                <li><a href="properties.html" class="text-muted text-decoration-none">Properties</a></li>
+                                <li><a href="buy.html" class="text-muted text-decoration-none">Buy</a></li>
+                                <li><a href="rent.html" class="text-muted text-decoration-none">Rent</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Services</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Mortgage Calculator</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Market Reports</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Connect</h6>
+                            <div class="social-links">
+                                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="floating-chat" id="floatingChat">
+        <div class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h6 class="mb-0">Chat with Agent</h6>
+                <button class="btn-close btn-close-white" onclick="toggleChat()"></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message agent-message">
+                    <div class="avatar">
+                        <img src="/placeholder.svg?height=30&width=30" alt="Agent">
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm here to help you connect with the perfect agent for your needs!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type your message..." id="chatInput">
+                    <button class="btn btn-primary" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@500;800&display=swap");
+
+:root {
+  --background: hsl(47, 88%, 63%);
+  --card-bg: hsl(0, 0%, 100%);
+  --text-grey: hsl(0, 0%, 50%);
+  --text: hsl(0, 0%, 7%);
+  --font-size: 16px;
+  --font-family: "Figtree", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 440px;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: var(--font-size);
+  color: var(--text-grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--text-grey);
+}
+
+.share-wrapper {
+  position: relative;
+}
+
+.share-btn {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.share-btn:hover {
+  background: #ccc;
+}
+
+.share-modal {
+  position: absolute;
+  bottom: 120%;
+  right: 0;
+  background: #333;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 320px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 302px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .share-modal {
+    bottom: 140%;
+    right: -10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 425px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 302px;
+  }
+
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .share-modal {
+    bottom: 140%;
+    right: -10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 435px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 302px;
+  }
+
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .share-modal {
+    bottom: 140%;
+    right: -10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 435px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .card-img {
+    width: 502px;
+    height: auto;
+  }
+
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .share-modal {
+    bottom: 140%;
+    right: -10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

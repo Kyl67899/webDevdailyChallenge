@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Properties - Nestico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-home text-primary me-2"></i>Nestico
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="buy.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rent.html">Rent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="agents.html">Find Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our Company</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="contact.html" class="btn btn-outline-primary me-2">Contact Us</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Buy Your Dream Home</h1>
+                    <p class="lead">Discover the perfect property with our comprehensive buying services and expert
+                        guidance.</p>
+                    <a href="#search" class="btn btn-light btn-lg mt-3">Start Your Search</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/placeholder.svg?height=400&width=500" alt="Home Buying" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-card bg-white p-4 rounded shadow">
+                        <h3 class="mb-4 text-center">Find Your Perfect Home</h3>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">Location</label>
+                                <input type="text" class="form-control" placeholder="City, State, ZIP">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">Property Type</label>
+                                <select class="form-select">
+                                    <option>All Types</option>
+                                    <option>House</option>
+                                    <option>Apartment</option>
+                                    <option>Condo</option>
+                                    <option>Villa</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">Price Range</label>
+                                <select class="form-select">
+                                    <option>Any Price</option>
+                                    <option>Under $500K</option>
+                                    <option>$500K - $1M</option>
+                                    <option>$1M - $2M</option>
+                                    <option>Above $2M</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">Bedrooms</label>
+                                <select class="form-select">
+                                    <option>Any</option>
+                                    <option>1+</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
+                                    <option>4+</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">Bathrooms</label>
+                                <select class="form-select">
+                                    <option>Any</option>
+                                    <option>1+</option>
+                                    <option>2+</option>
+                                    <option>3+</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-primary w-100 mt-4">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Process -->
+    <section class="process-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Your Home Buying Journey</h2>
+                    <p class="text-muted">We make the process simple and stress-free</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">1</div>
+                        <h5 class="mb-3">Get Pre-Approved</h5>
+                        <p class="text-muted">Understand your budget and get pre-approved for a mortgage to strengthen
+                            your offers.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">2</div>
+                        <h5 class="mb-3">Search Properties</h5>
+                        <p class="text-muted">Browse our extensive database of verified listings and schedule virtual or
+                            in-person tours.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">3</div>
+                        <h5 class="mb-3">Make an Offer</h5>
+                        <p class="text-muted">Work with our agents to craft competitive offers and negotiate the best
+                            terms.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">4</div>
+                        <h5 class="mb-3">Close the Deal</h5>
+                        <p class="text-muted">Complete inspections, finalize financing, and get the keys to your new
+                            home!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties for Sale -->
+    <section class="featured-buy-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Properties for Sale</h2>
+                    <p class="text-muted">Handpicked homes ready for immediate purchase</p>
+                </div>
+            </div>
+
+            <div class="row" id="buyPropertiesGrid">
+                <!-- Properties for sale will be loaded here by JavaScript -->
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="properties.html" class="btn btn-primary btn-lg">View All Properties for Sale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mortgage Calculator -->
+    <section class="mortgage-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <h2 class="mb-4">Calculate Your Mortgage</h2>
+                    <p class="text-muted mb-4">Get an estimate of your monthly payments and see what you can afford.</p>
+
+                    <div class="mortgage-calculator bg-white p-4 rounded shadow">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Home Price</label>
+                                <input type="number" class="form-control" id="homePrice" placeholder="500000">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Down Payment</label>
+                                <input type="number" class="form-control" id="downPayment" placeholder="100000">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Interest Rate (%)</label>
+                                <input type="number" class="form-control" id="interestRate" placeholder="3.5"
+                                    step="0.1">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Loan Term (years)</label>
+                                <select class="form-select" id="loanTerm">
+                                    <option value="30">30 years</option>
+                                    <option value="15">15 years</option>
+                                    <option value="20">20 years</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" onclick="calculateMortgage()">Calculate Payment</button>
+                            </div>
+                        </div>
+                        <div id="mortgageResult" class="mt-4"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="/placeholder.svg?height=400&width=500" alt="Mortgage Calculator"
+                        class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-home text-primary me-2"></i>Nestico
+                    </h5>
+                    <p class="text-muted">Making home buying effortless with verified listings, virtual tours, and
+                        transparent pricing.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                                <li><a href="properties.html" class="text-muted text-decoration-none">Properties</a>
+                                </li>
+                                <li><a href="rent.html" class="text-muted text-decoration-none">Rent</a></li>
+                                <li><a href="agents.html" class="text-muted text-decoration-none">Agents</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Services</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html" class="text-muted text-decoration-none">Contact Us</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Mortgage Calculator</a></li>
+                                <li><a href="#" class="text-muted text-decoration-none">Market Reports</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h6 class="fw-bold mb-3">Connect</h6>
+                            <div class="social-links">
+                                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="floating-chat" id="floatingChat">
+        <div class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h6 class="mb-0">Chat with Agent</h6>
+                <button class="btn-close btn-close-white" onclick="toggleChat()"></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message agent-message">
+                    <div class="avatar">
+                        <img src="/placeholder.svg?height=30&width=30" alt="Agent">
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! Ready to buy your dream home? I can help you find the perfect property!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type your message..." id="chatInput">
+                    <button class="btn btn-primary" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
