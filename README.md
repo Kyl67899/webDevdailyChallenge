@@ -1,3 +1,3 @@
 # webDevdailyChallenge
 
-- SaaS landing Page (Non Responsive)
+- SaaS landing Page
