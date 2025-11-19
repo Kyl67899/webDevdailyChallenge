@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product information UI</title>
+</head>
+
+<body>
+    <main>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="./images/Image.png" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Headphones</h1>
+                <h2>
+                    Bevel Over
+                </h2>
+                <p class="product-description">
+                    Wireless Noise Cancelling Headphones with Microphone and UHQ Audio.
+                </p>
+                <div class="product-box">
+                    <table class="product-specs">
+                        <tr>
+                            <td class="box-label">Material</td>
+                            <td class="box-value">Plastic</td>
+                        </tr>
+                        <tr>
+                            <td class="box-label">Included Components</td>
+                            <td class="box-value">Ear Cushions, headband</td>
+                        </tr>
+                        <tr>
+                            <td class="box-label">Dimensions</td>
+                            <td class="box-value">18.21 x 7.57 x 20.98 cm; 236 g</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="product-btn">
+                    <div>
+                        <button class="add-to-cart-btn" onclick="btnDecrease()">
+                            -
+                        </button>
+                        <span>
+                            1
+                        </span>
+                        <button class="add-to-cart-btn" onclick="btnIncrease()">
+                            +
+                        </button>
+                    </div>
+                    <button class="buy-now-btn" onclick="btnBuyNow()">
+                        Buy now for $399
+                    </button>
+                </div>
+                <button class="color-option-btn">
+                    Color Options
+                </button>
+                <div class="360-view">
+                    <button class="view-360-btn">
+                        360° View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let quantity = 1;
+
+        function btnIncrease() {
+            // console.log('increased');
+            quantity++;
+            updatedQuantity();
+        }
+
+        function btnDecrease() {
+            if (quantity > 1) {
+                quantity--;
+                updatedQuantity();
+            }
+        }
+
+        function updatedQuantity() {
+            const quantitySpan = document.querySelector('.product-btn span');
+            quantitySpan.textContent = quantity;
+        }
+
+        function btnBuyNow() {
+            // console.log("Buy now clicked");
+            alert("Thank you for your purchase of " + quantity + " Headphones! Total: $" + (399 * quantity));
+        }
+    </script>
+</body>
+
+</html>
