@@ -119,10 +119,28 @@ body[data-theme="dark"] .view-360-btn:hover {
 .product-specs {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.product-specs td:first-child {
+  font-weight: 600;
 }
 
 .product-specs td {
   padding: 8px 0;
+}
+
+.box-label{
+  text-align: left;
+}
+
+table, th, td{
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th, td{
+  text-align: end;
 }
 
 .box-label {
@@ -143,7 +161,7 @@ body[data-theme="dark"] .view-360-btn:hover {
   margin-top: 16px;
 }
 
-.product-btn > div {
+.product-btn>div {
   display: flex;
   align-items: center;
   gap: 8px;
