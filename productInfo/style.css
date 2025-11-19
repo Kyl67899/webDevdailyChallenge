@@ -2,9 +2,9 @@
 :root {
   --text-color: #000000;
   --background-color: #58361a;
-  --table-color: #58361A;
-  --table-color1: #9F6B3F;
-  --table-color2: #9F6B3F;
+  --table-color: #58361a;
+  --table-color1: #9f6b3f;
+  --table-color2: #9f6b3f;
   --table--text-color: #333333;
 }
 
@@ -81,6 +81,15 @@ body[data-theme="dark"] .view-360-btn:hover {
 }
 
 /* Image section */
+.product-image{
+  flex: 1;
+  border-right: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
 .product-image img {
   display: flex;
   justify-content: center;
@@ -124,7 +133,7 @@ body[data-theme="dark"] .view-360-btn:hover {
 .product-specs,
 td,
 th {
-  width: 100%;
+  width: 75%;
   border-collapse: collapse;
   /* background-color: var(--table-color1); */
   border: 1px solid var(--table-color2);
@@ -167,12 +176,13 @@ td {
 /* Buttons */
 .product-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
   margin-top: 16px;
+  justify-content: flex-start;
 }
 
-.product-btn>div {
+.product-btn > div {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -215,6 +225,7 @@ td {
   border: none;
   padding: 10px 16px;
   font-size: 14px;
+  width: 25%;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
