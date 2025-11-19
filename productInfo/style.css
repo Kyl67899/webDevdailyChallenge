@@ -2,7 +2,10 @@
 :root {
   --text-color: #000000;
   --background-color: #58361a;
-  --table-color: #9f6b3f;
+  --table-color: #58361A;
+  --table-color1: #9F6B3F;
+  --table-color2: #9F6B3F;
+  --table--text-color: #333333;
 }
 
 * {
@@ -79,6 +82,8 @@ body[data-theme="dark"] .view-360-btn:hover {
 
 /* Image section */
 .product-image img {
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -116,30 +121,36 @@ body[data-theme="dark"] .view-360-btn:hover {
   margin-top: 12px;
 }
 
-.product-specs {
+.product-specs,
+td,
+th {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #ddd;
+  /* background-color: var(--table-color1); */
+  border: 1px solid var(--table-color2);
+  border-radius: 20px;
 }
 
 .product-specs td:first-child {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .product-specs td {
   padding: 8px 0;
 }
 
-.box-label{
+.box-label {
   text-align: left;
 }
 
-table, th, td{
-  padding: 10px;
-  border: 1px solid #ddd;
+.box-value {
+  color: var(--table--text-color);
+  text-align: right;
 }
 
-th, td{
+th,
+td {
+  padding: 10px;
   text-align: end;
 }
 
