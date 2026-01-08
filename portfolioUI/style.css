@@ -1,18 +1,139 @@
-:root{
-
+:root {
+    --text-title: #1f1f1f;
+    --title-weight: 800;
+    --text-para: #1f1f1f;
+    --para-weight: 400;
+    --header-color: #ffd4d0;
+    --header-colors: #febc9a;
+    --body-color: #a9aecb;
+    --btn-color: #fc3314;
 }
 
-*{
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: #1f1f1f;
+    padding: 2rem;
 }
 
+/* Portfolio Container */
+.portfolio {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 
+/* Portfolio Header */
 
+.portfolio-header {
+    background: var(--header-colors);
+    color: var(--text-title);
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.portfolio-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-header p {
+    max-width: 600px;
+    margin: auto;
+    color: #555;
+}
+
+/* Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+}
+
+/* Card */
+.portfolio-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+}
+
+.portfolio-card img {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Card Content */
+.project-content {
+    /* display: grid;
+    gap: 0.5rem; */
+    padding: 1.2rem;
+    position: relative;
+}
+
+.project-content h3 {
+    font-size: 1.3rem;
+}
+
+.project-content span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Link Btn */
+.project-link {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: var(--btn-color);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer{
+    background: black;
+    color: var(--header-colors);
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.footer a{
+    color: #fff;
+}
+
+.footer a:hover{
+    color: var(--btn-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .portfolio-grid {
+        padding: 2rem 1.5rem;
+    }
+}
