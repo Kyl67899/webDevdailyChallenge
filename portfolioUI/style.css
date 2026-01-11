@@ -35,7 +35,6 @@ body {
 }
 
 /* Portfolio Header */
-
 .portfolio-header {
     background: var(--header-colors);
     color: var(--text-title);
@@ -132,7 +131,47 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 320px) {
+    .portfolio{
+        
+    }
+    
+    .portfolio-grid {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .portfolio-grid {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .portfolio-grid {
+        padding: 2rem 1.5rem;
+    }
+}
+
 @media (max-width: 600px) {
+    .portfolio-grid {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio{
+        max-width: 1200px;
+    }
+
+    .portfolio-header h1, p{
+       
+    }
+
+    .portfolio{
+       
+    }
+
     .portfolio-grid {
         padding: 2rem 1.5rem;
     }
