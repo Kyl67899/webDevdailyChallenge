@@ -57,13 +57,13 @@ body {
     border: none;
     cursor: pointer;
     font-weight: 600;
-
+    text-decoration: none;
 }
 
-/* .btn-dark:hover {
-    text-decoration: none;
+.btn-dark:hover {
+    text-decoration: underline;
     text-underline-offset: 15px;
-} */
+}
 
 .btn.dark {
     background: var(--color);
