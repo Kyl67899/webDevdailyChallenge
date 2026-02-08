@@ -1,4 +1,4 @@
-:root{
+:root {
     --primary-color: #4CAF50;
     --secondary-color: #f44336;
     --font-family: 'Arial, sans-serif';
@@ -62,9 +62,9 @@ body {
     color: #333;
 }
 
-#section1, 
-#section2, 
-#section3{
+#section1,
+#section2,
+#section3 {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
@@ -74,13 +74,13 @@ body {
 
 #section1 h2,
 #section2 h2,
-#section3 h2{
+#section3 h2 {
     font-size: 2em;
     margin-top: 0;
     text-align: center;
 }
 
-.row{
+.row {
     display: flex;
     /* justify-content: space-around; */
     /* flex-wrap: wrap; */
@@ -127,10 +127,10 @@ body {
     background-color: var(--secondary-color);
 }
 
-.challenge-table{
+.challenge-table {
     /* width: 100%; */
     border-collapse: collapse;
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 
 .table-header {
@@ -170,7 +170,7 @@ footer {
 
 /* media queries */
 @media (max-width: 600px) {
-    .main-header h1{
+    .main-header h1 {
         font-size: 1.8em;
     }
 
@@ -186,5 +186,3 @@ footer {
         flex-direction: column;
     }
 }
-
-
