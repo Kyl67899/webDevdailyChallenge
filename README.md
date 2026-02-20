@@ -53,18 +53,18 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 | Project Name | Level | Recommended Tech | Link/Status
 | --- | --- | --- | --- |
 | Eye Follow UI | Beginner |  HTML, CSS, JS | https://kyl67899.github.io/EyeFollowUI | https://github.com/Kyl67899/EyeFollowUI
-| BookProfilepage | Beginner |  HTML and CSS | 
-| Blog-card | Beginner | HTML and CSS | 
+| BookProfilepage | Beginner |  HTML and CSS | https://kyl67899.github.io/bookProfilePage/
+| Blog-card | Beginner | HTML and CSS | https://blog-card-profile.vercel.app/
 | CardsUI | Beginner | HTML and CSS | 
 | ContactFormUI | Beginner | HTML and CSS | 
 | Crowdfundings | Beginner | HTML and CSS | 
 | Newsletter | Beginner | HTML and CSS | 
 | PaymentLandingPage | Beginner | HTML and CSS | 
-| PortfolioUI | Beginner | HTML and CSS | 
-| PortfolioUI2 | Beginner | HTML and CSS | 
+| PortfolioUI | Beginner | HTML and CSS | https://kyl67899.github.io/portfolioUI-webdev/
+| PortfolioUI2 | Beginner | HTML and CSS | https://portfolio-ui-2-web-dev-daily.vercel.app/
 | Productinfo | Beginner | HTML and CSS | 
 | SaaSUI | Beginner | HTML and CSS | https://saaas-landing-page.vercel.app
-| WeatherAppUI | Beginner | HTML and CSS | 
+| WeatherAppUI | Beginner | HTML and CSS | weather-appui.netlify.app
 
 # Web Development Projects
 
