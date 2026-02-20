@@ -52,7 +52,7 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 
 | Project Name | Level | Recommended Tech | Link/Status
 | --- | --- | --- | --- |
-| Eye Follow UI | Beginner |  HTML, CSS, JS | 
+| Eye Follow UI | Beginner |  HTML, CSS, JS | https://kyl67899.github.io/EyeFollowUI
 | BookProfilepage | Beginner |  HTML and CSS | 
 | Blog-card | Beginner | HTML and CSS | 
 | CardsUI | Beginner | HTML and CSS | 
