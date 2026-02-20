@@ -52,18 +52,19 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 
 | Project Name | Level | Recommended Tech | Link/Status
 | --- | --- | --- | --- |
-| BookProfilepage | Beginner |  HTML and CSS |
-| Blog-card | Beginner | HTML and CSS |
-| cardsUI | Beginner | HTML and CSS |
-| contactFormUI | Beginner | HTML and CSS |
-| crowdfundings | Beginner | HTML and CSS |
-| newsletter | Beginner | HTML and CSS |
-| paymentLandingPage | Beginner | HTML and CSS |
-| portfolioUI | Beginner | HTML and CSS |
-| portfolioUI2 | Beginner | HTML and CSS |
-| productinfo | Beginner | HTML and CSS |
-| saaasui | Beginner | HTML and CSS | https://saaas-landing-page.vercel.app
-| weatherAppUI | Beginner | HTML and CSS |
+| Eye Follow UI | Beginner |  HTML, CSS, JS | 
+| BookProfilepage | Beginner |  HTML and CSS | 
+| Blog-card | Beginner | HTML and CSS | 
+| CardsUI | Beginner | HTML and CSS | 
+| ContactFormUI | Beginner | HTML and CSS | 
+| Crowdfundings | Beginner | HTML and CSS | 
+| Newsletter | Beginner | HTML and CSS | 
+| PaymentLandingPage | Beginner | HTML and CSS | 
+| PortfolioUI | Beginner | HTML and CSS | 
+| PortfolioUI2 | Beginner | HTML and CSS | 
+| Productinfo | Beginner | HTML and CSS | 
+| SaaSUI | Beginner | HTML and CSS | https://saaas-landing-page.vercel.app
+| WeatherAppUI | Beginner | HTML and CSS | 
 ## Deploying your project
 
 As mentioned above, there are many ways to host your project for free. Our recommended hosts are:

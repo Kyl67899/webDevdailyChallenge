@@ -18,6 +18,6 @@ document.addEventListener("mousemove", (event) => {
 
         pupil.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
 
-        console.log(`Mouse: (${mouseX}, ${mouseY}), Pupil: (${pupilX}, ${pupilY}), Angle: ${angle}, Distance: ${distance}`);
+        // console.log(`Mouse: (${mouseX}, ${mouseY}), Pupil: (${pupilX}, ${pupilY}), Angle: ${angle}, Distance: ${distance}`);
     })
 });
