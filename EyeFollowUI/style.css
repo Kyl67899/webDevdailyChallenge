@@ -1,0 +1,82 @@
+:root {
+    --eye-color: #000000;
+    --card-eye-color: #ffffff;
+    --background-color: #2f86f1;
+    --font-family: 'Arial, sans-serif';
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--background-color); */
+    background-color: var(--background-color);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+}
+
+.blue-area {
+    background-color: var(--background-color);
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leye,
+.reye {
+    width: 100px;
+    height: 100px;
+    background-color: var(--card-eye-color);
+    border-radius: 50%;
+    margin: 0 10px;
+    position: relative;
+}
+
+.pupil {
+    width: 50px;
+    height: 50px;
+    background-color: var(--eye-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.card h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
