@@ -65,6 +65,28 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 | Productinfo | Beginner | HTML and CSS | 
 | SaaSUI | Beginner | HTML and CSS | https://saaas-landing-page.vercel.app
 | WeatherAppUI | Beginner | HTML and CSS | 
+
+# Web Development Projects
+
+| Project Name | Level | Recommended Tech | Link/Status
+| --- | --- | --- | --- |
+| <a class="link" href='https://github.com/Kyl67899/stripe-clone-landing-page'> Strip Clone Landing Page </a>                                 | Mid            | Next, React, Tailwindcss, shadnui, Framer motion   | `In Progress`
+| <a class="link" href='https://github.com/Kyl67899/Backend_Todo'> Todo app </a>                                 | Mid            | HTML, CSS, MongoDB, JS     | `In Progress`
+| <a class="link" href='#'> Summarist app </a>                                 | Mid            | Next, Firebase, Materialui, Tailwindcss, HTML, CSS, TS    | `In Progress`
+| <a class="link" href='https://electricalwebsite.vercel.app'> Power Pro Electrical </a>              | Mid            | Next, Tailwindcss, resend, HTML, CSS, Firebase     | `Completed`
+| <a class="link" href='#'> Library App </a>                                   | Mid            | React, CSS, HTML                | `Completed`
+| <a class="link" href='https://github.com/Kyl67899/lgmvip-web'> Web Development </a>    | Mid            | React, Materialui, Tailwindcss, JS, Firebase | `Completed`
+| <a class="link" href="https://recipe--page.vercel.app">Recipe App</a>                  | Mid                 | API, React, tailwindcss, JS     | `Completed`
+| <a class="link" href='https://thebikestore.vercel.app'> Bike Store </a>                                    | Mid            | React, CSS, HTML, Firebase      | `Completed` 
+| <a class="link" href='https://twitterclone-project.vercel.app'> Twitter Clone </a>                                 | Mid            | Next, materialui, Tailwindcss, JS, Firebase | `Completed`
+| <a class="link" href='https://github.com/Kyl67899/Testimonials_grid_section'> Testimonials grid section </a>                                 | Junior            | HTML, CSS,    | `Completed`
+| <a class="link" href='#'> Coming Soon Page </a>                              | Junior       | HTML, CSS, JS                   | `Completed`
+| <a class="link" href='https://github.com/Kyl67899/4CardFeature'> Four Card Feature </a>              | Junior           | html, css     | `Completed`
+| <a class="link" href='https://blog-card-profile.vercel.app'> Blog Card </a>                                 | Junior            | HTML, CSS, JS, Tailwindcss    | `Completed`
+| <a class="link" href='https://contactformmain.netlify.app'> Contact Form </a>                                 | Junior            | HTML, CSS, JS    | `Completed`
+| <a class="link" href='https://tip-calc12.vercel.app'> Tip Calculator </a>                                | Junior         | HTML, CSS, JS                   | `Completed`
+| <a class="link" href='https://sociallinkprofile.vercel.app'>Social Media Profile</a>                          | Junior       | HTML, CSS, JS                   | `Completed`
+
 ## Deploying your project
 
 As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
