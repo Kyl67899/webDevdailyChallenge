@@ -11,7 +11,7 @@
 
     /* - Family: [Figtree](https://fonts.google.com/specimen/Figtree) */
     /* Weights: 500, 800 */
-    --font-family: ;
+    --font-family: "Figtree", sans-serif;
 }
 
 * {
@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: "Inter";
+    font-family: var(--font-family);
     height: 100vh;
     width: 100vw;
     background-color: var(--background);

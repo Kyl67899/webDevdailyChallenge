@@ -3,12 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment Successful</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Payment Successful UI</title>
+    <script
+      src="https://kit.fontawesome.com/59a83466c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </head>
   <body>
-    <div class="">
-        
-    </div>
+    <main class="card">
+      <!-- <div class="card__icon">
+        <span id="badge" class="badge success"></span>
+        <img class="icons_check" src="./assets/check-solid.png" alt="Success Icon" />
+      </div> -->
+
+      <div class="card__icon">
+        <svg class="success-icon" viewBox="0 0 100 100">
+          <!-- Glow circle -->
+          <circle class="glow" cx="50" cy="50" r="40" />
+
+          <!-- Ring -->
+          <circle class="success-ring" cx="50" cy="50" r="30" fill="none" />
+
+          <!-- Check -->
+          <path class="success-check" fill="none" d="M38 52l8 8 18-18" />
+        </svg>
+      </div>
+
+      <h1 class="card__title">Payment Successful!</h1>
+
+      <p class="card__description">
+        Your payment has been processed successfully. You will receive a
+        confirmation email shortly.
+      </p>
+
+      <div class="payment-box">
+        <div class="row">
+          <span>Amount</span>
+          <strong>$149.99</strong>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <span>Transaction ID</span>
+          <span class="badge">TXN-789123456</span>
+        </div>
+
+        <div class="row">
+          <span>Payment Method</span>
+          <span>**** 4242</span>
+        </div>
+
+        <div class="row">
+          <span>Date</span>
+          <span>Mar 4th, 2026</span>
+        </div>
+
+        <div class="row">
+          <span>Merchant</span>
+          <span>TechStore Pro</span>
+        </div>
+      </div>
+
+      <div class="card__email">
+        <img
+          class="icons_email"
+          src="./assets/envelope-solid.png"
+          alt="email icon"
+        />
+        <span>Receipt sent to info@webdevdaily.com</span>
+      </div>
+
+      <button aria-label="Download Receipt" class="btn btn-primary">
+        <img
+          class="icons_download"
+          src="./assets/download-solid.png"
+          alt="download icon"
+        />
+        Download Receipt
+      </button>
+
+      <button class="btn btn-secondary">← Return to Store</button>
+
+      <p class="support">
+        Need help? Contact our support team at
+        <span>
+          <a class="support__link" href="mailto:support@techstore.com">
+            support@techstore.com
+          </a>
+        </span>
+      </p>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">
+        &copy; 2026
+        <a class="footer__link" href="https://kylepprofile.dev" target="_blank">
+          Kyle Parsotan - Web Dev Daily
+        </a>
+      </p>
+    </footer>
+
+    <script src="js.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        showBadge("success"); // change this to test other statuses
+
+        // showBadge("failed");
+        // showBadge("pending");
+        // showBadge("refunded");
+        setTimeout(() => {
+          confetti({
+            particleCount: 120,
+            spread: 100,
+            origin: { y: 0.6 },
+          });
+        }, 1300); // matches ring + check animation timing
+      });
+    </script>
   </body>
 </html>

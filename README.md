@@ -52,6 +52,7 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 
 | Project Name | Level | Recommended Tech | Link/Status
 | --- | --- | --- | --- |
+| Payment UI | Beginner |  HTML, CSS, JS | https://kyl67899.github.io/ | https://github.com/Kyl67899/
 | Eye Follow UI | Beginner |  HTML, CSS, JS | https://kyl67899.github.io/EyeFollowUI | https://github.com/Kyl67899/EyeFollowUI
 | BookProfilepage | Beginner |  HTML and CSS | https://kyl67899.github.io/bookProfilePage/
 | Blog-card | Beginner | HTML and CSS | https://blog-card-profile.vercel.app/
@@ -73,6 +74,7 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 | <a class="link" href='https://github.com/Kyl67899/stripe-clone-landing-page'> Strip Clone Landing Page </a>                                 | Mid            | Next, React, Tailwindcss, shadnui, Framer motion   | `In Progress`
 | <a class="link" href='https://github.com/Kyl67899/Backend_Todo'> Todo app </a>                                 | Mid            | HTML, CSS, MongoDB, JS     | `In Progress`
 | <a class="link" href='#'> Summarist app </a>                                 | Mid            | Next, Firebase, Materialui, Tailwindcss, HTML, CSS, TS    | `In Progress`
+| <a class="link" href='https://github.com/Kyl67899/stripe-clone-landing-page'> Payment UI </a>                                 | Junior            | HTML, CSS, JS   | `Completed`
 | <a class="link" href='https://electricalwebsite.vercel.app'> Power Pro Electrical </a>              | Mid            | Next, Tailwindcss, resend, HTML, CSS, Firebase     | `Completed`
 | <a class="link" href='#'> Library App </a>                                   | Mid            | React, CSS, HTML                | `Completed`
 | <a class="link" href='https://github.com/Kyl67899/lgmvip-web'> Web Development </a>    | Mid            | React, Materialui, Tailwindcss, JS, Firebase | `Completed`
