@@ -62,6 +62,10 @@ body {
     color: #333;
 }
 
+.title{
+    text-align: center;
+}
+
 #section1,
 #section2,
 #section3 {

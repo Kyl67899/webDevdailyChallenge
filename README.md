@@ -52,6 +52,7 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 
 | Project Name | Level | Recommended Tech | Link/Status
 | --- | --- | --- | --- |
+| FAQ Dropdown UI | Beginner |  HTML, CSS, JS | https://github.com/Kyl67899/paymentSuccessfulUI | https://www.webdevdaily.io/solutions/5327
 | Payment UI | Beginner |  HTML, CSS, JS | https://github.com/Kyl67899/paymentSuccessfulUI | https://kyl67899.github.io/paymentSuccessfulUI/
 | Eye Follow UI | Beginner |  HTML, CSS, JS | https://kyl67899.github.io/EyeFollowUI | https://github.com/Kyl67899/EyeFollowUI
 | BookProfilepage | Beginner |  HTML and CSS | https://kyl67899.github.io/bookProfilePage/
