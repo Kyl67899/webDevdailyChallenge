@@ -75,6 +75,7 @@ This path is designed for you to practice HTML, CSS, and basic JavaScript.
 | <a class="link" href='https://github.com/Kyl67899/stripe-clone-landing-page'> Strip Clone Landing Page </a>                                 | Mid            | Next, React, Tailwindcss, shadnui, Framer motion   | `In Progress`
 | <a class="link" href='https://github.com/Kyl67899/Backend_Todo'> Todo app </a>                                 | Mid            | HTML, CSS, MongoDB, JS     | `In Progress`
 | <a class="link" href='#'> Summarist app </a>                                 | Mid            | Next, Firebase, Materialui, Tailwindcss, HTML, CSS, TS    | `In Progress`
+| <a class="link" href='https://www.webdevdaily.io/solutions/5327'> FAQ Dropdown UI </a>                                 | Mid            | HTML, CSS, Bootstrap   | `Completed`
 | <a class="link" href='https://github.com/Kyl67899/stripe-clone-landing-page'> Payment UI </a>                                 | Junior            | HTML, CSS, JS   | `Completed`
 | <a class="link" href='https://electricalwebsite.vercel.app'> Power Pro Electrical </a>              | Mid            | Next, Tailwindcss, resend, HTML, CSS, Firebase     | `Completed`
 | <a class="link" href='#'> Library App </a>                                   | Mid            | React, CSS, HTML                | `Completed`
