@@ -1,0 +1,77 @@
+:root {
+    --card-bg: #f8f9fa;
+    --text: 25px;
+    --background: linear-gradient(90deg, #7f7b7b, #bab5b5);
+    --font-family: "Inter", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq {
+    padding: 80px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+}
+
+.accordion-button {
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-item {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.faqaccord {
+    padding: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 425px) {
+
+    .card {
+        padding: 25px;
+    }
+
+    .faq {
+        padding: 35px 20px;
+    }
+
+}
