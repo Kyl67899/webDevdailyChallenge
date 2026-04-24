@@ -1,0 +1,390 @@
+# ============================================================
+#  CI/CD Pipeline — HTML & CSS Project
+#  Location: .github/workflows/ci-cd.yml
+#
+#  Pipeline stages:
+#   1. lint        — Validate HTML (Nu Html Checker) & CSS (Stylelint)
+#   2. audit       — npm audit for any tooling vulnerabilities
+#   3. build       — Copy/process assets into /dist
+#   4. lighthouse  — Performance, accessibility & best-practice scores
+#   5. deploy      — Push /dist to GitHub Pages (main branch only)
+#   6. notify      — Summary comment on pull requests
+# ============================================================
+
+name: CI/CD — HTML & CSS
+
+on:
+  push:
+    branches: ["main", "develop"]
+    paths:
+      - "**.html"
+      - "**.css"
+      - "images/**"
+      - ".github/workflows/ci-cd.yml"
+  pull_request:
+    branches: ["main", "develop"]
+    paths:
+      - "**.html"
+      - "**.css"
+      - "images/**"
+  workflow_dispatch:                    # manual trigger from Actions tab
+
+# Cancel in-progress runs for the same branch/PR to save minutes
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write                       # needed to push to gh-pages branch
+  pull-requests: write                  # needed to post PR comments
+  pages: write
+  id-token: write
+
+env:
+  NODE_VERSION: "20"
+  DIST_DIR: "dist"
+
+# ────────────────────────────────────────────────────────────
+jobs:
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 1 — HTML Validation
+  # Uses the W3C Nu Html Checker via the validator/validator
+  # Docker image to catch malformed markup early
+  # ──────────────────────────────────────────────────────────
+  lint-html:
+    name: Lint — HTML (W3C Validator)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .                       # scan from repo root
+          extra: "--also-check-css"     # validate inline CSS too
+          # To only check specific files:
+          # extra: "index.html about.html"
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 2 — CSS Linting
+  # Stylelint enforces consistent CSS conventions and catches
+  # errors (invalid properties, duplicate selectors, etc.)
+  # ──────────────────────────────────────────────────────────
+  lint-css:
+    name: Lint — CSS (Stylelint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install Stylelint
+        run: |
+          npm init -y
+          npm install --save-dev \
+            stylelint \
+            stylelint-config-standard
+
+      - name: Create Stylelint config (if not present)
+        run: |
+          if [ ! -f .stylelintrc.json ]; then
+            cat > .stylelintrc.json << 'EOF'
+          {
+            "extends": ["stylelint-config-standard"],
+            "rules": {
+              "color-no-invalid-hex": true,
+              "font-family-no-duplicate-names": true,
+              "block-no-empty": true,
+              "comment-no-empty": true,
+              "declaration-block-no-duplicate-properties": true,
+              "no-duplicate-selectors": true,
+              "no-empty-source": true,
+              "selector-pseudo-class-no-unknown": true,
+              "selector-pseudo-element-no-unknown": true,
+              "unit-no-unknown": true
+            }
+          }
+          EOF
+          fi
+
+      - name: Run Stylelint
+        run: npx stylelint "**/*.css" --ignore-path .gitignore
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 3 — Dependency Audit
+  # Quick npm audit of any package.json tooling used in CI
+  # ──────────────────────────────────────────────────────────
+  audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    needs: [lint-html, lint-css]        # only run if linting passes
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 4 — Build
+  # Copies HTML/CSS/images into /dist and minifies assets.
+  # No bundler needed — uses clean-css-cli & html-minifier.
+  # ──────────────────────────────────────────────────────────
+  build:
+    name: Build — Minify & Bundle Assets
+    runs-on: ubuntu-latest
+    needs: [audit]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install build tools
+        run: |
+          npm install --save-dev \
+            clean-css-cli \
+            html-minifier-terser \
+            copyfiles
+
+      - name: Create dist directory
+        run: mkdir -p ${{ env.DIST_DIR }}
+
+      - name: Minify CSS
+        run: |
+          find . -name "*.css" \
+            ! -path "./node_modules/*" \
+            ! -path "./${{ env.DIST_DIR }}/*" \
+            | while read file; do
+                dest="${{ env.DIST_DIR }}/${file#./}"
+                mkdir -p "$(dirname "$dest")"
+                npx cleancss -o "$dest" "$file"
+                echo "  ✓ Minified: $file → $dest"
+              done
+
+      - name: Minify HTML
+        run: |
+          find . -name "*.html" \
+            ! -path "./node_modules/*" \
+            ! -path "./${{ env.DIST_DIR }}/*" \
+            | while read file; do
+                dest="${{ env.DIST_DIR }}/${file#./}"
+                mkdir -p "$(dirname "$dest")"
+                npx html-minifier-terser \
+                  --collapse-whitespace \
+                  --remove-comments \
+                  --remove-optional-tags \
+                  --remove-redundant-attributes \
+                  --remove-script-type-attributes \
+                  --use-short-doctype \
+                  --minify-css true \
+                  --output "$dest" \
+                  "$file"
+                echo "  ✓ Minified: $file → $dest"
+              done
+
+      - name: Copy static assets (images, fonts, favicon)
+        run: |
+          for dir in images fonts icons; do
+            if [ -d "$dir" ]; then
+              cp -r "$dir" "${{ env.DIST_DIR }}/"
+              echo "  ✓ Copied: $dir/"
+            fi
+          done
+          # Copy any favicon files in root
+          for fav in favicon.ico favicon.png *.png; do
+            if [ -f "$fav" ]; then
+              cp "$fav" "${{ env.DIST_DIR }}/" 2>/dev/null || true
+            fi
+          done
+
+      - name: Show dist contents & sizes
+        run: |
+          echo "── Build output ──────────────────────"
+          find ${{ env.DIST_DIR }} -type f | sort
+          echo ""
+          echo "── Total size ────────────────────────"
+          du -sh ${{ env.DIST_DIR }}
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ${{ env.DIST_DIR }}/
+          retention-days: 7
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 5 — Lighthouse CI
+  # Runs Google Lighthouse against the built HTML and fails
+  # if scores drop below defined thresholds
+  # ──────────────────────────────────────────────────────────
+  lighthouse:
+    name: Lighthouse — Performance & Accessibility
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ${{ env.DIST_DIR }}
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Create Lighthouse config
+        run: |
+          cat > lighthouserc.json << 'EOF'
+          {
+            "ci": {
+              "collect": {
+                "staticDistDir": "./dist",
+                "numberOfRuns": 2
+              },
+              "assert": {
+                "assertions": {
+                  "categories:performance":    ["warn",  { "minScore": 0.80 }],
+                  "categories:accessibility":  ["error", { "minScore": 0.90 }],
+                  "categories:best-practices": ["warn",  { "minScore": 0.85 }],
+                  "categories:seo":            ["warn",  { "minScore": 0.80 }]
+                }
+              },
+              "upload": {
+                "target": "temporary-public-storage"
+              }
+            }
+          }
+          EOF
+
+      - name: Run Lighthouse CI
+        run: lhci autorun --config=lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 6 — Deploy to GitHub Pages
+  # Only runs on pushes to main (not PRs)
+  # Publishes the /dist folder to the gh-pages branch
+  # ──────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy — GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [lighthouse]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ${{ env.DIST_DIR }}
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.DIST_DIR }}
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Print live URL
+        run: echo "🚀 Deployed → ${{ steps.deploy.outputs.page_url }}"
+
+  # ──────────────────────────────────────────────────────────
+  # JOB 7 — PR Summary Comment
+  # Posts a build/score summary as a comment on every PR
+  # ──────────────────────────────────────────────────────────
+  pr-comment:
+    name: PR Summary Comment
+    runs-on: ubuntu-latest
+    needs: [lint-html, lint-css, build, lighthouse]
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Post summary comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            // Remove any previous bot comment so we don't stack duplicates
+            for (const comment of comments) {
+              if (comment.user.type === 'Bot' && comment.body.includes('CI/CD Pipeline Summary')) {
+                await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: comment.id,
+                });
+              }
+            }
+
+            const sha = context.sha.substring(0, 7);
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            const body = `## ✅ CI/CD Pipeline Summary
+            | Step | Status |
+            |---|---|
+            | 🔍 HTML Validation | ✅ Passed |
+            | 🎨 CSS Linting | ✅ Passed |
+            | 🔒 Security Audit | ✅ Passed |
+            | 📦 Build & Minify | ✅ Passed |
+            | 🏠 Lighthouse | ✅ Passed |
+
+            **Commit:** \`${sha}\`
+            **Branch:** \`${context.ref.replace('refs/heads/', '')}\`
+            **[View full run →](${runUrl})**
+
+            > _This comment updates automatically on each push._`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
